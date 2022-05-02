@@ -9,9 +9,15 @@ import { GithubProvider } from './context/context'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GithubProvider>
-      <App />
-    </GithubProvider>
+    <Auth0Provider
+      domain='dev-043qx0ds.us.auth0.com'
+      clientId='jfo0tgT846tFOV1uzRE92uQYgUXYb1UG'
+      redirectUri={window.location.origin}
+      cacheLocation='localstorage'>
+      <GithubProvider>
+        <App />
+      </GithubProvider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
