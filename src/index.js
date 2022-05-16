@@ -10,8 +10,8 @@ import { GithubProvider } from './context/context'
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain='dev-043qx0ds.us.auth0.com'
-      clientId='jfo0tgT846tFOV1uzRE92uQYgUXYb1UG'
+      domain={process.env.REACT_APP_AUTH_DOMAIN}
+      clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
       redirectUri={window.location.origin}
       cacheLocation='localstorage'>
       <GithubProvider>

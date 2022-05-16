@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useAuth0 } from '@auth0/auth0-react'
 
@@ -7,6 +7,10 @@ const Navbar = () => {
     useAuth0()
 
   const isUser = isAuthenticated && user
+
+  useEffect(() => {
+    console.log(`user: ${user.email}`)
+  }, [user])
 
   return (
     <Wrapper>
